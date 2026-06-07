@@ -49,11 +49,7 @@ function reducer(state, action) {
           .filter((item) => item.amount > 0),
       };
 
-    case "REMOVE":
-      return {
-        ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload),
-      };
+
 
     case "CLEAR_CART":
       return {
@@ -133,16 +129,7 @@ function CartItems() {
             -
           </button>
 
-          <button
-            onClick={() =>
-              dispatch({
-                type: "REMOVE",
-                payload: item.id,
-              })
-            }
-          >
-            Remove
-          </button>
+    
         </div>
       ))}
     </div>
